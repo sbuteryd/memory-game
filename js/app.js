@@ -52,10 +52,15 @@ function fistStep(event){
         setTimeout(function inital () {
             if (fistStepList[0] !==fistIcond){
                 getDiv.className = 'card';
+            }else if (fistStepList[0] === fistIcond){
+                let findshow = document.querySelector('.deck').querySelector('.show')
+                findshow.className = 'card open match';
+                fistStepList.pop();
             }else{
                 fistStepList.pop()
             }
-        },150)
+
+        },60)
 
     }
     console.log(fistStepList)
