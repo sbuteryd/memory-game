@@ -51,10 +51,13 @@ function fistStep(event){
         getDiv.className = 'card open match animated tada';
         setTimeout(function inital () {
             if (fistStepList[0] !==fistIcond){
-                getDiv.className = 'card open show animated tada';
+                let noFind = document.querySelector('.deck').querySelector('.show');
+                getDiv.className = 'card open show nomatch animated wobble';
+                noFind.className = 'card open show nomatch animated wobble';
                 setTimeout(function click () {
                     getDiv.className = 'card';
-                },1000)
+                    noFind.className ='card open show'
+                },500)
 
             }else if ((fistStepList[0] === fistIcond)){
                 let findshow = document.querySelector('.deck').querySelector('.show');

@@ -107,3 +107,9 @@ h1 {
     float: right;
     cursor: pointer;
 }
+
+.deck .card.open.nomatch {
+    transform: rotateY(0);
+    background: orangered;
+    cursor: default;
+}
