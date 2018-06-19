@@ -112,4 +112,5 @@ function randCard() {
     for (let i = 0; i < randCards.length; i++) {
         randCards[i].className = cardShuffle[i]
     }
+    fistStep();
 }
