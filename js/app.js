@@ -80,3 +80,36 @@ function fistStep(event){
 }
 
 clickDiv.addEventListener('click',fistStep);
+
+//Reset button
+     //（1）、查找重置按钮
+const restButton = document.querySelector('.restart').querySelector('i');
+     //（2）、给按钮添加事件
+restButton.addEventListener('click',function () {
+     //（3）、找到每一个图框，
+    const findCards = document.querySelector('.deck').querySelectorAll('.card');
+    for(let i =0; i<findCards.length;i++){
+     //（4）、替换成黑色风格
+        findCards[i].className = 'card'
+    }
+     //（5）、enable shuffle 图标随机打乱
+    randCard();
+});
+
+// random cards
+function randCard() {
+    //（1）、找到每一个图标
+    const randCards = document.querySelector('.deck').querySelectorAll('i');
+    //（2）、图标列表，这个要放入随机函数
+    const carList = [];
+    for (let i = 0; i < randCards.length; i++) {
+        //（3）、找到每一个 图标，添加到列表
+        carList.push(randCards[i].className)
+    }
+    //（4）、列表添加到洗牌
+    const cardShuffle = shuffle(carList);
+    //（5）、把页面的图标，替换成随机的图标，
+    for (let i = 0; i < randCards.length; i++) {
+        randCards[i].className = cardShuffle[i]
+    }
+}
