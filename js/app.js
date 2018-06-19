@@ -51,7 +51,7 @@ function fistStep(event){
         getDiv.className = 'card open match animated tada';
         setTimeout(function inital () {
             if (fistStepList[0] !==fistIcond){
-                getDiv.className = 'card animated shake';
+                getDiv.className = 'card';
             }else if ((fistStepList[0] === fistIcond)){
                 let findshow = document.querySelector('.deck').querySelector('.show');
                 findshow.className = 'card open match animated tada';
