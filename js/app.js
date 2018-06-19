@@ -38,3 +38,8 @@ function shuffle(array) {
  */
 
 const clickDiv = document.querySelector('.deck');
+function fistStep(event){
+    let clickArea = event.target;
+    console.log(clickArea)
+}
+clickDiv.addEventListener('click',fistStep);
