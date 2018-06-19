@@ -38,8 +38,18 @@ function shuffle(array) {
  */
 
 const clickDiv = document.querySelector('.deck');
+const fistStepList =[];
 function fistStep(event){
-    let clickArea = event.target;
-    console.log(clickArea)
+    let getDiv = event.target;
+    // console.log(clickArea)
+    if ((fistStepList.length === 0) && (event.srcElement.nodeName === 'LI')) {
+        let fistIcond = event.target.firstElementChild.className;
+        fistStepList.push(fistIcond);
+        getDiv.className = 'card open show';
+    }
+
+    console.log(fistStepList)
+
 }
+
 clickDiv.addEventListener('click',fistStep);
