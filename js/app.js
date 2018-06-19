@@ -48,19 +48,19 @@ function fistStep(event){
         getDiv.className = 'card open show';
     }else if ((fistStepList.length === 1) && (event.srcElement.nodeName === 'LI')){
         let fistIcond = event.target.firstElementChild.className;
-        getDiv.className = 'card open match';
+        getDiv.className = 'card open match animated tada';
         setTimeout(function inital () {
             if (fistStepList[0] !==fistIcond){
-                getDiv.className = 'card';
+                getDiv.className = 'card animated shake';
             }else if (fistStepList[0] === fistIcond){
                 let findshow = document.querySelector('.deck').querySelector('.show')
-                findshow.className = 'card open match';
+                findshow.className = 'card open match animated tada';
                 fistStepList.pop();
             }else{
                 fistStepList.pop()
             }
 
-        },60)
+        },200)
 
     }
     console.log(fistStepList)
