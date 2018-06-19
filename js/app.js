@@ -46,8 +46,18 @@ function fistStep(event){
         let fistIcond = event.target.firstElementChild.className;
         fistStepList.push(fistIcond);
         getDiv.className = 'card open show';
-    }
+    }else if ((fistStepList.length === 1) && (event.srcElement.nodeName === 'LI')){
+        let fistIcond = event.target.firstElementChild.className;
+        getDiv.className = 'card open match';
+        setTimeout(function inital () {
+            if (fistStepList[0] !==fistIcond){
+                getDiv.className = 'card';
+            }else{
+                fistStepList.pop()
+            }
+        },150)
 
+    }
     console.log(fistStepList)
 
 }
