@@ -46,13 +46,13 @@ function fistStep(event){
         let fistIcond = event.target.firstElementChild.className;
         fistStepList.push(fistIcond);
         getDiv.className = 'card open show';
-    }else if ((fistStepList.length === 1) && (event.srcElement.nodeName === 'LI')){
+    }else if (((fistStepList.length === 1) && (event.srcElement.nodeName === 'LI'))&&(event.target.className ==='card')){
         let fistIcond = event.target.firstElementChild.className;
         getDiv.className = 'card open match animated tada';
         setTimeout(function inital () {
             if (fistStepList[0] !==fistIcond){
                 getDiv.className = 'card animated shake';
-            }else if (fistStepList[0] === fistIcond){
+            }else if ((fistStepList[0] === fistIcond)){
                 let findshow = document.querySelector('.deck').querySelector('.show');
                 findshow.className = 'card open match animated tada';
                 fistStepList.pop();
