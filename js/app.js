@@ -53,14 +53,24 @@ let lastTime = setInterval(function () {
 
 
 function fistStep(event){
-
-    //1、步数
+    let getDiv = event.target;
+    let stars = document.querySelector('.stars').querySelectorAll('.fa-star');
     if(event.srcElement.nodeName === 'LI'){
         gameStep = gameStep+1;
         document.querySelector('.moves').textContent = gameStep;
+        //    替换星星
     }
 
-    let getDiv = event.target;
+    if (gameStep === 16){
+        stars[0].className = 'fa fa-star-o'
+    }else if (gameStep ===25){
+        stars[0].className = 'fa fa-star-o'
+    }else if (gameStep ===30){
+        stars[0].className = 'fa fa-star-o'
+    }
+    //1、步数
+
+
     console.log(event);
     //2、抓取第一个图标
     if ((fistStepList.length === 0) && (event.srcElement.nodeName === 'LI')&&(event.target.className ==='card')) {
