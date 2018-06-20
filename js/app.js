@@ -53,6 +53,7 @@ let lastTime = setInterval(function () {
 
 
 function fistStep(event){
+
     //1、步数
     if(event.srcElement.nodeName === 'LI'){
         gameStep = gameStep+1;
@@ -110,6 +111,10 @@ const restButton = document.querySelector('.restart').querySelector('i');
      //（2）、给按钮添加事件
 restButton.addEventListener('click',function () {
      //（3）、找到每一个图框，
+    //时间和步数重置
+    count = 0;
+    gameStep =0;
+    document.querySelector('.moves').textContent = gameStep;
     const findCards = document.querySelector('.deck').querySelectorAll('.card');
     for(let i =0; i<findCards.length;i++){
      //（4）、替换成黑色风格
