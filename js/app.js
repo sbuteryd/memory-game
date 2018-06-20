@@ -39,6 +39,18 @@ function shuffle(array) {
 
 const clickDiv = document.querySelector('.deck');
 const fistStepList =[];
+let count = 1;
+let timeStop =1;
+
+let timeList = document.querySelector('.time');
+let lastTime = setInterval(function () {
+    timeList.textContent = count = count+1;
+    if(timeStop ===9){
+        clearInterval(lastTime)
+    }
+    },1000);
+
+
 function fistStep(event){
     //1、捕捉点击
     let getDiv = event.target;
@@ -48,7 +60,8 @@ function fistStep(event){
         let fistIcond = event.target.firstElementChild.className;
         fistStepList.push(fistIcond);
         getDiv.className = 'card open show';
-    //3、防止第二次点击
+
+        //3、防止第二次点击
     }else if (((fistStepList.length === 1) && (event.srcElement.nodeName === 'LI'))&&(event.target.className ==='card')){
     //4、抓取第二个图标
         let fistClick = fistStepList.pop();
@@ -70,9 +83,11 @@ function fistStep(event){
                 },480);
     //4-4、如果配显现，清空列表，显现出来
             }else if ((fistClick === fistIcond)){
+                timeStop = timeStop+1;
                 let diffScond = document.querySelector('.deck').querySelector('.show');
                 diffScond.className ='card open match animated tada';
-                console.log(fistStepList)
+                console.log(fistStepList);
+                console.log(timeStop,'timestop');
             }
         },0)
 

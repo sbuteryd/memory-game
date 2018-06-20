@@ -113,3 +113,10 @@ h1 {
     background: orangered;
     cursor: default;
 }
+
+.time{
+    margin-left: 30px;
+}
+.time-text{
+    margin-left: 30px;
+}
