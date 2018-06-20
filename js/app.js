@@ -39,8 +39,9 @@ function shuffle(array) {
 
 const clickDiv = document.querySelector('.deck');
 const fistStepList =[];
-let count = 1;
+let count = 0;
 let timeStop =1;
+let gameStep =0;
 
 let timeList = document.querySelector('.time');
 let lastTime = setInterval(function () {
@@ -52,7 +53,12 @@ let lastTime = setInterval(function () {
 
 
 function fistStep(event){
-    //1、捕捉点击
+    //1、步数
+    if(event.srcElement.nodeName === 'LI'){
+        gameStep = gameStep+1;
+        document.querySelector('.moves').textContent = gameStep;
+    }
+
     let getDiv = event.target;
     console.log(event);
     //2、抓取第一个图标
