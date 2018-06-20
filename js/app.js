@@ -51,28 +51,30 @@ function fistStep(event){
     //3、防止第二次点击
     }else if (((fistStepList.length === 1) && (event.srcElement.nodeName === 'LI'))&&(event.target.className ==='card')){
     //4、抓取第二个图标
+        let fistClick = fistStepList.pop();
         let fistIcond = event.target.firstElementChild.className;
         console.log(fistIcond,"fisIcond");
     //4-1、getDiv 的元素是card  替换成动画,  如果找到同样的图标显示匹配以及动画效果
         getDiv.className = 'card open match animated tada';
     //4-2、 如果图标不匹配，替换成 card 不显示
         setTimeout(function inital () {
-            if (fistStepList[0] !==fistIcond){
+            if (fistClick !==fistIcond){
+                let findShow = document.querySelector('.deck').querySelector('.show');
                 getDiv.className = 'card open show nomatch animated wobble';
+                findShow.className = 'card open show nomatch animated wobble';
+
     //4-3、把不配备的动画去掉，点击完后
                 setTimeout(function click () {
                     getDiv.className = 'card';
-                },200)
+                    findShow.className ='card';
+                },480);
     //4-4、如果配显现，清空列表，显现出来
-            }else if ((fistStepList[0] === fistIcond)){
-                let findshow = document.querySelector('.deck').querySelector('.show');
-                findshow.className = 'card open match animated tada';
-                fistStepList.pop();
-            }else{
-                fistStepList.pop()
+            }else if ((fistClick === fistIcond)){
+                let diffScond = document.querySelector('.deck').querySelector('.show');
+                diffScond.className ='card open match animated tada';
+                console.log(fistStepList)
             }
-
-        },200)
+        },0)
 
     }
     console.log(fistStepList)
